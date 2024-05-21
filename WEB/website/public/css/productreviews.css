@@ -1,0 +1,921 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Buong code sa navbar, mula dito*/
+
+.profile-icon {
+    width: 1.4vw;
+    height: 1.4vw;   
+    margin-top: auto;
+    margin-left: 1.5vw;
+    cursor: pointer;
+    border-radius: 50%; /* Ensure the image is circular */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.cart-icon {
+    width: 1.4vw;
+    height: 1.4vw;
+    margin-top: auto;
+    margin-right: 1vw;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #333;
+    color: #fff;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    user-select: none;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    padding: 0;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.4vw;
+    margin-left: 2%;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    margin-right: 1%;
+}
+
+.nav-links li {
+    margin-right: 15px;
+    margin-top: auto;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links a {
+    margin-left: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.0vw;
+    text-decoration: none;
+    font-family: sans-serif;
+    transition: color 0.3s ease
+}
+
+.nav-links a:hover {
+    color: #858383;
+}
+
+.login:hover {
+    color: #36917c;
+}
+
+
+.user {
+    margin-left: 15px;
+    margin-top: auto;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.1vw;
+    text-decoration: none;
+    font-family: sans-serif;
+    transition: color 0.3s ease
+}
+
+
+/* Hanggang dito (navbar) */
+
+.header-container {
+    margin-top: 6%;
+    text-align: center;
+    padding: 5%;
+    font-family: 'Albert Sans', sans-serif;
+    color: #333;
+}
+
+.header-container h1 {
+    font-weight: normal;
+    font-size: 3.3vw;
+}
+
+.header-container p {
+    font-size: 1.4vw;
+}
+
+
+.reviews-nav {
+    display: flex;
+    justify-content: end;
+}
+
+.reviews-nav p {
+    margin: 1% 1%;
+    cursor: pointer;
+}
+
+.reviews-nav button {
+    margin-left: 58%;
+    background-color: #3ec2a7;
+    color: #fff;
+    border: 2px solid #3ec2a7;
+    padding: 1%;
+    font-size: 1.1vw;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.reviews-nav button:hover {
+    background-color: white;
+    color: #3ec2a7;
+    border-color: #3ec2a7;
+}
+
+.reviews-nav {
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+
+.reviews-container {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+}
+
+.reviews-container .review {
+    width: 100%;
+    height: auto;
+    border: #333 solid 1px;
+    margin: 2% auto;
+    padding-bottom: 2%;
+}
+
+.pfp {
+    display: flex;
+    margin: 2% 2%;
+    justify-content: right;
+}
+
+.pfp img {
+    width: 4%;
+    height: 4%;
+    margin-right: 1%;
+}
+
+.pfp span {
+    font-family: 'Albert Sans', sans-serif;
+    color: #333;
+    font-size: 1.2vw;
+    margin-top: 5px;
+}
+
+.pfp .elipsies {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.user-post {
+    margin:0 2%;
+    font-family: 'Albert Sans', sans-serif;
+    color: #333;
+}
+
+.user-post h1 {
+    font-weight: normal;
+    font-size: 2vw;
+}
+
+.user-post p {
+    font-weight: normal;
+    font-size: 1.3vw;
+}
+
+.react {
+    display: flex;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-bottom: 2%;
+    border-bottom: #999 solid 1px;
+}
+
+.react img{
+    width: 3%;
+    height: auto;
+    margin-right: 1%;
+}
+
+.react span {
+    font-family: 'Albert Sans', sans-serif;
+    color: #333;
+    font-size: 1.2vw;
+    margin-top: 3px;
+    margin-right: 1%;
+}
+
+.comment {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 1%;
+}
+
+.comment span {
+    font-family: 'Albert Sans', sans-serif;
+    color: #333;
+    font-size: 1.2vw;
+}
+
+.comment-box {
+    text-align: center;
+    margin-top: 2%;
+}
+
+.comment-box input {
+    width: 97%;
+    height: 50px;
+    text-align: left;
+    padding-left: 2%;
+}
+
+.dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dialog-content h2 {
+    margin-top: 0;
+}
+
+.dialog-content label {
+    display: block;
+    margin-top: 10px;
+}
+
+.dialog-content input,
+.dialog-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.dialog-buttons button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3ec2a7;
+    color: #fff;
+    cursor: pointer;
+}
+
+.dialog-buttons button:hover {
+    background-color: #333;
+    color: #3ec2a7;
+}
+
+.dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 600px;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.categories-grid span {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+}
+
+.categories-grid span:hover {
+    color: #3ec2a7;
+}
+
+
+.comment-box {
+    position: relative;
+}
+
+.comment-box input[type="text"] {
+    width: calc(100% - 50px); /* Adjust width to make space for the button */
+    padding-right: 30px; /* Ensure text does not overlap with the button */
+}
+
+.send-button {
+    position: absolute;
+    right: 1%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #3ec2a7;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.send-button:hover {
+    background-color: #36917c;
+}
+
+.comment-container {
+    margin-top: 10px;
+}
+
+.comment-item {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.comment-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-content span {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.comment-content p {
+    margin: 0;
+}
+
+/* last content */
+
+.last-content {
+    background-color: #ededed;
+    display: flex;
+    padding-top: 7%;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-bottom: 10%;
+
+}
+
+.underlined-text {
+    width: 30%;
+}
+
+.ultxtlinks {
+    list-style-type: none;
+    
+}
+
+.ultxtlinks a{
+    font-family: 'Albert Sans', sans-serif;
+    color: #333;
+    font-size: 1.4vw;
+    font-weight: normal;
+    line-height: 2;
+}
+
+.about-us{
+    font-family: 'Albert Sans', sans-serif;
+    color: #333;
+    width: 30%;
+    margin-right: 5%;
+    font-weight: 300;
+}
+
+.about-us h1{
+    font-size: 1.4vw;
+    font-weight: normal;
+}
+
+.about-us p{
+    font-size: 1.3vw;
+}
+
+.new-releases{
+    font-family: 'Albert Sans', sans-serif;
+    color: #333;
+    width: 30%;
+    font-weight: 300;
+}
+
+.new-releases h1{
+    font-size: 1.4vw;
+    font-weight: normal;
+}
+
+.new-releases p{
+    font-size: 1.3vw;
+}
+
+.input-container {
+    position: relative;
+    width: 90%;
+    margin-bottom: 5%;
+  }
+
+  .input-container input {
+    width: 100%;
+    padding: 4%;
+    box-sizing: border-box;
+    font-size: 1vw;
+  }
+
+
+  .Subscribe {
+    background-color: #3ec2a7;
+    color: #fff;
+    border: 2px solid #3ec2a7;
+    padding: 3% 30%;
+    font-size: 1.1vw;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    }
+    
+    .Subscribe:hover {
+    background-color: white;
+    color: #3ec2a7;
+    border-color: #3ec2a7;
+    }
+
+
+    /* */
+    .menu {
+        background-color: #ffffff;
+        width: min-content;
+        min-width: 15%; 
+        height: auto;      
+        border-radius: 10px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	    z-index: 1;
+        padding: 10px;
+        margin-left: 35%;
+        margin-top: -14%;
+        user-select: none;
+
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+    }
+
+    .menu { 
+        display: none;
+    }
+ 
+    
+    .linearProfile {       
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        display: flex;                   
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-bottom-width: 1px;
+        border-bottom-color: rgb(240, 240, 240);
+        border-bottom-style: solid;                   
+    }
+
+    .linearProfile img {
+        width: 2.4vw;
+        height: 2.4vw;   
+        margin-top: auto;
+        margin-left: 1.5vw;
+        cursor: pointer;
+        position: relative;
+        left: -3%;
+        
+    }
+
+
+    .linearProfile #circle {
+        border-radius: 50%; /* Ensure the image is circular */
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    .linearProfile h1 {
+        margin-left: 20px;
+        font-size: 18px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #36917c;    
+    }
+
+    .linearProfile a {
+        text-decoration: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        align-content: center;
+        margin-bottom: 2%;
+
+    }
+
+    .editProfile {
+        margin-left: 20px;
+        font-size: 18px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #000000;
+
+    }
+
+    .editProfile:hover {
+        color: #36917c;
+    }
+
+    .logout {
+        margin-left: 20px;
+        font-size: 18px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #000000;
+    }
+
+    .logout:hover {
+        color: #36917c;
+    }
+
+
+    /* */
+
+
+    .viewProfileDetails {
+        width: 600px;
+        height: auto;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        padding: 20px;
+        margin-left: 100px;
+        margin-left: -15%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+    }
+    
+    
+    
+    .linearNav {
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        position: relative;
+        border-bottom-width: 1px;
+        border-bottom-color: rgb(240, 240, 240);
+        border-bottom-style: solid;
+    
+        
+    }
+    
+    .linearNav h1 {
+        font-size: 22px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #36917c;  
+        border-color: #000000;
+    
+    }
+    
+    .linearNav p {
+        font-size: 16px;
+        margin-left: 2px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #000000; 
+    }
+    
+    .dbDetails {
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        padding: 10px;   
+    
+        
+        
+    }
+    
+    .dbDetails p {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        padding: 10px;
+        color: rgba(85, 85, 85, .8);
+    }
+    
+    /* DB DETAILS*/
+    
+    .dbUsername {
+        display: flex;
+        background-color: transparent;        
+        margin-bottom: 2%;
+    }
+    
+    .dbUsername p {
+        background-color: transparent;
+        margin-top: auto;
+        margin-bottom: auto;
+        
+    }
+    
+    .getdbUser p {
+        background-color: transparent;
+        width: auto;
+        color: #000000;
+        font-family: 'Albert Sans', sans-serif;
+    
+    }
+    
+    /**/
+    
+    .dbName {
+        display: flex;
+        background-color: transparent; 
+        margin-bottom: 2%;
+       
+    }
+    
+    .dbName p {
+        background-color: transparent;
+        margin-top: auto;
+        margin-bottom: auto;
+        
+    }
+    
+    .getdbName p {
+        background-color: transparent;
+        width: auto;
+        color: #000000;
+        font-family: 'Albert Sans', sans-serif;
+    
+        
+    }
+    
+    /**/
+    
+    .dbMail {
+        display: flex;
+        background-color: transparent;     
+        margin-bottom: 2%;
+    
+    }
+    
+    .dbMail p {
+        background-color: transparent;
+        margin-top: auto;
+        margin-bottom: auto;
+        
+    }
+    
+    .getdbMail p {
+        background-color: transparent;
+        width: auto;
+        color: #000000;
+        font-family: 'Albert Sans', sans-serif;
+    
+    }
+    
+    /**/
+    
+    .dbPhone {
+        display: flex;
+        background-color: transparent;    
+        margin-bottom: 2%;
+    
+    }
+    
+    .dbPhone p {
+        background-color: transparent;
+        margin-top: auto;
+        margin-bottom: auto;
+        
+    }
+    
+    .getdbPhone p {
+        background-color: transparent;
+        width: auto;
+        color: #000000;
+        font-family: 'Albert Sans', sans-serif;
+    
+    }
+    
+    /**/
+    
+    .dbGender {
+        display: flex;
+        padding-bottom: 4%;
+        background-color: transparent;       
+        border-bottom-width: 1px;
+        border-bottom-color: rgb(240, 240, 240);
+        border-bottom-style: solid;  
+        
+    }
+    
+    .dbGender p {
+        background-color: transparent;
+        margin-top: auto;
+        margin-bottom: auto;
+        
+    }
+    
+    .getdbGender p {
+        background-color: transparent;
+        width: auto;
+        color: #000000;
+        font-family: 'Albert Sans', sans-serif;
+    
+    }
+    
+    .enterAddress p {
+        color: rgba(85, 85, 85, .8);
+        background-color: transparent;
+    }
+    
+    
+    .enterAddress {
+    
+        display: flex;
+    
+    }
+    
+    .getdbAddress p {
+        background-color: transparent;
+        width: auto;
+        color: rgba(85, 85, 85, .8);
+        font-family: 'Albert Sans', sans-serif;
+    
+    
+    }
+    
+    
+    .linearInputAdd {
+        background-color: transparent;
+        display: flex;
+        margin-left: 2%;
+        width: 99%;
+        height: 70px;
+    
+    }
+    
+    .linearInputAdd input{
+        width: 75%;
+        padding-left: 10%;
+        padding-right: 10%;
+        height: 60%;
+        font-family: 'Albert Sans', sans-serif;
+        border: 1px solid #ccc; 
+    }
+    
+    .linearInputAdd img {
+        margin-left: 2%;
+        width: 2.4vw;
+        height: 2.4vw;
+    }
+    
+    
+    
+    .saveDetails {
+        width: 20%;
+        height: 400px;
+        background-color: #333;
+        text-align: center;
+        padding: 20px;
+        padding-top: 70px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        z-index: 1;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        margin-left: 20%;
+    
+    }
+    
+    .saveDetails img {
+        width: 5.4vw;
+        height: 5.4vw;   
+        cursor: pointer;
+        border-radius: 50%; /* Ensure the image is circular */
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    
+    
+    
+    .linearCoverS {
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+        background-color: transparent;
+        padding: 20px;
+        margin-top: 20px;
+    }
+    
+    
+    
+    .linearSelect {
+        width: 40%;
+        height: 48px;
+        background-color: transparent;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-top: 20px; /* Adjust margin as needed */
+        background-color: #3ec2a7;
+        color: white;
+        font-family: 'Albert Sans', sans-serif;
+        margin-bottom: 10%;
+        cursor: pointer;
+        user-select: none;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    
+    
+    
+    .linearSave {
+        width: 40%;
+        height: 10%;
+        background-color: transparent;
+        text-align: center;
+        margin-top: 20px; /* Adjust margin as needed */
+        background-color: gray;
+        color: white;
+        cursor: pointer;
+        user-select: none;
+        font-family: 'Albert Sans', sans-serif;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    
+    
+    
+    .viewProfileDetails,
+    .saveDetails {
+    
+        display: none;
+        
+    }
+    

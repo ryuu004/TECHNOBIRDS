@@ -1,0 +1,1031 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    overflow: auto; 
+}
+
+/* Buong code sa navbar, mula dito*/
+
+.profile-icon {
+    width: 1.4vw;
+    height: 1.4vw;   
+    margin-top: auto;
+    margin-left: 1.5vw;
+    cursor: pointer;
+    border-radius: 50%; /* Ensure the image is circular */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.cart-icon {
+    width: 1.4vw;
+    height: 1.4vw;
+    margin-top: auto;
+    margin-right: 1vw;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #333;
+    color: #fff;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    user-select: none;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    padding: 0;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.4vw;
+    margin-left: 2%;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    margin-right: 1%;
+}
+
+.nav-links li {
+    margin-right: 15px;
+    margin-top: auto;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links a {
+    margin-left: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.0vw;
+    text-decoration: none;
+    font-family: sans-serif;
+    transition: color 0.3s ease
+}
+
+.nav-links a:hover {
+    color: #858383;
+}
+
+.login:hover {
+    color: #36917c;
+}
+
+
+.user {
+    margin-left: 15px;
+    margin-top: auto;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.1vw;
+    text-decoration: none;
+    font-family: sans-serif;
+    transition: color 0.3s ease
+}
+
+
+/* Hanggang dito (navbar) */
+
+
+.cart-navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px; /* Adjust width as needed */
+    height: 100%;
+    background-color: white;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    z-index: 1000;
+  }
+
+
+  .cart-navbar.active {
+    transform: translateX(0);
+  }
+
+
+  .backdrop-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.24); /* Adjust opacity as needed */
+    z-index: 999; /* Ensure it's above other content */
+    display: none; /* Initially hide it */
+    transition: background-color 0.5s ease;
+}
+
+.cart-navbar.active ~ .backdrop-overlay {
+    display: block; /* Show the backdrop overlay when cart-navbar is active */
+}
+
+
+  .cart-navbar .header {
+    display: flex;
+    color: white;
+    font-family: 'Albert Sans', sans-serif;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    background-color: #333;
+    margin: 0%;
+  }
+
+  .cart-navbar .header span {
+    font-size: 2.3vw;
+    margin-left: 7%;
+    margin-top: auto;
+    cursor: pointer;
+  }
+
+  .cart-navbar .header h1{
+    margin: auto;
+    font-weight: normal;
+    font-size: 1.8vw;
+  }
+
+
+.header{
+    display: flex;
+    width: 100%;
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 1.8vw;
+    color: #333;
+    margin-top: 9%;
+    margin-left: 7%;
+}
+
+.search-box {
+    width: 55%;
+    height: 100%;
+    background-color: white;
+    margin-right: 10%;
+    margin-left: 10%;
+    border-radius: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 10px 15px;
+}
+
+.search-box input {
+    flex: 1;
+    height: 100%;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.search-box button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}
+
+button .fa-solid {
+    color: #333;
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+
+.result-box {
+    max-height: 160px;
+    overflow-y: scroll;
+}
+
+.result-box ul {
+    border-top: 1px solid #858383;
+    padding: 15px 10px;
+    margin: 0;
+}
+
+.result-box ul li {
+    list-style: none;
+    border-radius: 3px;
+    padding: 10px 10px;
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 1.2vw;
+    color: #333;
+    cursor: pointer;
+    margin: 0;
+}
+
+.result-box ul li:hover {
+    background-color: #b5b5b5;
+    font-weight: 500;
+}
+
+.header h1 {
+    margin-right: 0%;
+}
+
+/* categories */
+
+.categories {
+    max-width: 100%;
+    margin-top: 7%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-wrapper .image-list {
+    display: grid;
+    gap: 35px;
+    grid-template-columns: repeat(15,1fr);
+    font-size: 0
+}
+
+
+.slider-wrapper .image-list .image-item {
+    font-size: initial;
+    width: 8vw;
+    height: 7vw;
+    background-color: white;
+    padding: 10%;
+    padding-bottom: 50%;
+    margin: 0;
+    border-radius: 10%;
+    margin-left: 20px;
+}
+
+.slider-wrapper .image-list figure {
+    margin: 0;
+    position: relative;
+}
+
+.slider-wrapper .image-list figcaption {
+
+    position: absolute;
+    bottom: 5%;
+    left: 65%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 0.9vw;
+    color: #333;
+    font-weight: 750;
+    
+} 
+
+.slider-wrapper .image-list figure:hover figcaption {
+    text-decoration: underline;
+}
+
+.slider-wrapper .image-list figure:hover{
+    cursor: pointer;
+}
+
+.slider-wrapper .slide-button {
+    position: absolute;
+    height: 3vw;
+    width: 3vw;
+    color: white;
+    border: none;
+    background: #36917c;
+    font-size: 1.8vw;
+    cursor: pointer;
+    border-radius: 50%;
+    outline: none;
+    transform: translateY(-50%);
+}
+
+.slider-wrapper .slide-button:hover {
+    background: #444;
+}
+
+.slider-wrapper .slide-button#prev-slide {
+    left: 10px;
+    z-index: 1;
+    top: 80px;    
+}
+
+.slider-wrapper .slide-button#next-slide {
+    right: 10px;
+    top: 80px;
+}
+
+/* end of categories slider */
+
+
+.header1{
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 1vw;
+    color: #333;
+    margin-top: 10%;
+    margin-left: 7%;
+}
+
+.header1 h1 {
+    margin-right: 40%;
+}
+
+/* end of h1 */
+
+.slider-wrapper1 {
+    position: relative;
+    max-width: 75%;
+    margin: 3% auto 5%;
+}
+
+.slider1 {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    aspect-ratio: 8 / 9;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    border-radius: 10%;
+    background-color: white;
+    cursor: pointer;
+}
+
+.slider1:hover {
+    transform: scale(1.01);
+    transition: transform 0.3s ease;
+}
+
+
+.slider1 img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    width: 40%;
+    height: 100%;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: black;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+
+.dialog {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2; /* Higher z-index than backdrop */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.dialog .dialog-content1 {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 80px;
+    width: auto;
+    height: auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dialog-text p {
+    font-size: 1.2vw;
+}
+
+.dialog-content {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 80px 20px;
+    width: auto;
+    height: auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dialog-content .img img {
+    width: auto;
+    height: 300px;
+    margin-right: 10%;
+}
+
+.latest-descript {
+    height: 100%;
+    font-family: 'Albert Sans', sans-serif;
+    color: #333;
+    margin-left: 2%;
+}
+
+.latest-descript h1 {
+    font-weight: normal;
+}
+
+.latest-descript p {
+    font-size: 1.3vw;
+    color: #3ec2a7;
+}
+
+.latest-descript del{
+    font-size: 1.1vw;
+    margin-right: 70%;
+}
+
+.addtocart {
+    margin-top: 7%;
+    margin-left: 5%;
+    width: 40%;
+    height: 30%;
+    margin-bottom: 3%;
+    background-color: #3ec2a7;
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 1.1vw;
+    color: white;
+    border: #3ec2a7;
+    transition: background-color 0.3s;
+    padding: 2%;
+}
+
+.addtocart:hover {
+    background-color: white;
+    border: 1px solid #3ec2a7;
+    font-family: 'Albert Sans', sans-serif;
+    color: #3ec2a7;
+}
+
+.buynow {
+    width: 40%;
+    margin-left: 5%;
+    height: 15%;
+    background-color: #333;
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 1.1vw;
+    color: white;
+    border: #333;
+    transition: background-color 0.3s;
+    padding: 2%;
+}
+
+.buynow:hover {
+    background-color: white;
+    border: 1px solid #333;
+    font-family: 'Albert Sans', sans-serif;
+    color: #333;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.backdrop-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Lower z-index than dialog */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+/* end of latest-product slider */
+
+.header2{
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 1vw;
+    color: #333;
+    margin-top: 10%;
+    margin-left: 7%;
+}
+
+.header2 h1 {
+    margin-right: 40%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1%;
+    row-gap: 3%;
+    margin: 5%;
+  }
+  
+  .grid-item {
+    cursor: pointer;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    border-radius: 20px;
+    margin: 0;
+    padding-bottom: 8%;
+    transition: 0.5s ease
+   }
+
+   .grid-item:hover {
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+   }
+  
+  .image {
+    width: 85%;
+    height: auto;
+    margin-top: 10%;
+  }
+  
+  .name {
+    padding: 10px;
+    margin-top: auto;
+    font-size: 1.1vw;
+    font-family: 'Albert Sans', sans-serif;
+    color: #333;
+  }
+  
+  .price {
+    margin-top: 3px;
+    color: #36917c;
+    font-size: 1.3vw;
+    font-family: 'Albert Sans', sans-serif;
+  }
+
+  .discounted-price {
+    margin-top: 3px;
+    color: #858383;
+    font-size: 1.1vw;
+    font-family: 'Albert Sans', sans-serif;
+  }
+
+
+  /* */
+  .menu {
+    background-color: #ffffff;
+    width: min-content;
+    min-width: 15%; 
+    height: auto;      
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 10px;
+    margin-left: 35%;
+    margin-top: -14%;
+    user-select: none;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.menu { 
+    display: none;
+}
+
+
+.linearProfile {       
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    display: flex;                   
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(240, 240, 240);
+    border-bottom-style: solid;                   
+}
+
+.linearProfile img {
+    width: 2.4vw;
+    height: 2.4vw;   
+    margin-top: auto;
+    margin-left: 1.5vw;
+    cursor: pointer;
+    position: relative;
+    left: -3%;
+    
+}
+
+
+.linearProfile #circle {
+    border-radius: 50%; /* Ensure the image is circular */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.linearProfile h1 {
+    margin-left: 20px;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #36917c;    
+}
+
+.linearProfile a {
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-content: center;
+    margin-bottom: 2%;
+
+}
+
+.editProfile {
+    margin-left: 20px;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #000000;
+
+}
+
+.editProfile:hover {
+    color: #36917c;
+}
+
+.logout {
+    margin-left: 20px;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #000000;
+}
+
+.logout:hover {
+    color: #36917c;
+}
+
+
+/* */
+
+
+.viewProfileDetails {
+    width: 600px;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 20px;
+    margin-left: 100px;
+    margin-left: -15%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+
+
+.linearNav {
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    position: relative;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(240, 240, 240);
+    border-bottom-style: solid;
+
+    
+}
+
+.linearNav h1 {
+    font-size: 22px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #36917c;  
+    border-color: #000000;
+
+}
+
+.linearNav p {
+    font-size: 16px;
+    margin-left: 2px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #000000; 
+}
+
+.dbDetails {
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    padding: 10px;   
+
+    
+    
+}
+
+.dbDetails p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+    color: rgba(85, 85, 85, .8);
+}
+
+/* DB DETAILS*/
+
+.dbUsername {
+    display: flex;
+    background-color: transparent;        
+    margin-bottom: 2%;
+}
+
+.dbUsername p {
+    background-color: transparent;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+
+.getdbUser p {
+    background-color: transparent;
+    width: auto;
+    color: #000000;
+    font-family: 'Albert Sans', sans-serif;
+
+}
+
+/**/
+
+.dbName {
+    display: flex;
+    background-color: transparent; 
+    margin-bottom: 2%;
+   
+}
+
+.dbName p {
+    background-color: transparent;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+
+.getdbName p {
+    background-color: transparent;
+    width: auto;
+    color: #000000;
+    font-family: 'Albert Sans', sans-serif;
+
+    
+}
+
+/**/
+
+.dbMail {
+    display: flex;
+    background-color: transparent;     
+    margin-bottom: 2%;
+
+}
+
+.dbMail p {
+    background-color: transparent;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+
+.getdbMail p {
+    background-color: transparent;
+    width: auto;
+    color: #000000;
+    font-family: 'Albert Sans', sans-serif;
+
+}
+
+/**/
+
+.dbPhone {
+    display: flex;
+    background-color: transparent;    
+    margin-bottom: 2%;
+
+}
+
+.dbPhone p {
+    background-color: transparent;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+
+.getdbPhone p {
+    background-color: transparent;
+    width: auto;
+    color: #000000;
+    font-family: 'Albert Sans', sans-serif;
+
+}
+
+/**/
+
+.dbGender {
+    display: flex;
+    padding-bottom: 4%;
+    background-color: transparent;       
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(240, 240, 240);
+    border-bottom-style: solid;  
+    
+}
+
+.dbGender p {
+    background-color: transparent;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+
+.getdbGender p {
+    background-color: transparent;
+    width: auto;
+    color: #000000;
+    font-family: 'Albert Sans', sans-serif;
+
+}
+
+.enterAddress p {
+    color: rgba(85, 85, 85, .8);
+    background-color: transparent;
+}
+
+
+.enterAddress {
+
+    display: flex;
+
+}
+
+.getdbAddress p {
+    background-color: transparent;
+    width: auto;
+    color: rgba(85, 85, 85, .8);
+    font-family: 'Albert Sans', sans-serif;
+
+
+}
+
+
+.linearInputAdd {
+    background-color: transparent;
+    display: flex;
+    margin-left: 2%;
+    width: 99%;
+    height: 70px;
+
+}
+
+.linearInputAdd input{
+    width: 75%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 60%;
+    font-family: 'Albert Sans', sans-serif;
+    border: 1px solid #ccc; 
+}
+
+.linearInputAdd img {
+    margin-left: 2%;
+    width: 2.4vw;
+    height: 2.4vw;
+}
+
+
+
+.saveDetails {
+    width: 20%;
+    height: 400px;
+    background-color: #333;
+    text-align: center;
+    padding: 20px;
+    padding-top: 70px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    margin-left: 20%;
+
+}
+
+.saveDetails img {
+    width: 5.4vw;
+    height: 5.4vw;   
+    cursor: pointer;
+    border-radius: 50%; /* Ensure the image is circular */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+.linearCoverS {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    background-color: transparent;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+
+.linearSelect {
+    width: 40%;
+    height: 48px;
+    background-color: transparent;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 20px; /* Adjust margin as needed */
+    background-color: #3ec2a7;
+    color: white;
+    font-family: 'Albert Sans', sans-serif;
+    margin-bottom: 10%;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+.linearSave {
+    width: 40%;
+    height: 10%;
+    background-color: transparent;
+    text-align: center;
+    margin-top: 20px; /* Adjust margin as needed */
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    font-family: 'Albert Sans', sans-serif;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+.viewProfileDetails,
+.saveDetails {
+
+    display: none;
+    
+}
